@@ -18,8 +18,7 @@
 #
 #-------------------------------------------------
 #
-# download_data.py: Connect to the RBN website and download the raw data
-# files. Clean up the data and insert it into a MySQL database for processing.
+# csv_to_mysql.py: Parse CSV file and insert to MySQL database.
 #
 #=================================================
 
