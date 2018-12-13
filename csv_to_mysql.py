@@ -30,11 +30,6 @@ import sys
 
 from sqlalchemy import create_engine
 
-insert_query = '''
-INSERT INTO spots (de,freq,band,dx,mode,db,timestamp,speed,tx_mode)
-VALUES (%s,%f,%s,%s,%s,%d,%d,%d,%s)
-'''
-
 if len(sys.argv) != 2:
     print('Usage: ./csv_to_mysql.py <filename>')
 
@@ -53,5 +48,4 @@ df = df.rename(columns={
 })
 
 engine = create_engine('mysql+mysqlconnector://rbn_data:ionosphere@localhost/rbn_data')
-
 df.to_sql('spots', con=engine, if_exists='append', index=False, chunksize=100)
